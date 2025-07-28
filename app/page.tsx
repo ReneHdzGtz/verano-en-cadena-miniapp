@@ -100,6 +100,23 @@ export default function PunkHoroscopePage() {
             </div>
           </section>
 
+          {/* Version Selection */}
+          <section className="mb-8">
+            <div className="text-center">
+              <div className="inline-flex bg-[var(--app-card-bg)] rounded-2xl p-2 border border-[var(--app-card-border)] mb-8">
+                <div className="px-4 py-2 bg-[var(--app-accent)] text-white rounded-xl text-sm font-medium">
+                  v1.0 Classic
+                </div>
+                <div 
+                  className="px-4 py-2 text-[var(--app-foreground-muted)] hover:text-[var(--app-foreground)] cursor-pointer transition-colors text-sm font-medium"
+                  onClick={() => window.location.href = '/v2'}
+                >
+                  v2.0 Base Network ✨
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Method Selection */}
           <section className="mb-12">
             <h3 className="text-2xl font-bold text-[var(--app-foreground)] text-center mb-8">
