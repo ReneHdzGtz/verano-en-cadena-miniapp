@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { generateFrameMetadata } from '@/lib/utils/farcaster-share';
+import { Providers } from './providers';
+import './globals.css';
+import './theme.css';
 
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000';
@@ -17,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'Punk Horoscope - Horóscopos Web3',
       description: 'Descubre tu arquetipo Web3 y obtén horóscopos personalizados para el ecosistema crypto',
-      url: `${baseUrl}/punk-horoscope`,
+      url: baseUrl,
       siteName: 'Punk Horoscope',
       images: [
         {
@@ -58,10 +61,18 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function PunkHoroscopeLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <html lang="es">
+      <body className="bg-[var(--app-background)] text-[var(--app-foreground)]">
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  );
 }
