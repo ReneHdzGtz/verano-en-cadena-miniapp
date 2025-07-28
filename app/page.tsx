@@ -6,13 +6,7 @@ import { Web3Archetype } from '@/lib/types/punk-horoscope';
 import { QuizComponent } from './components/QuizComponent';
 import { ArchetypeSelector } from './components/ArchetypeSelector';
 import { HoroscopeDisplay } from './components/HoroscopeDisplay';
-import { 
-  ConnectWallet, 
-  Wallet, 
-  WalletDropdown, 
-  WalletDropdownDisconnect 
-} from "@coinbase/onchainkit/wallet";
-import { Name, Identity, Address, Avatar, EthBalance } from "@coinbase/onchainkit/identity";
+import { WalletSection } from './components/WalletSection';
 
 type ViewMode = 'home' | 'manual' | 'quiz' | 'horoscope';
 
@@ -85,22 +79,7 @@ export default function PunkHoroscopePage() {
                 </p>
               </div>
               
-              <div className="flex items-center gap-2 sm:gap-4">
-                <Wallet className="z-10">
-                  <ConnectWallet className="px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base">
-                    <Name className="text-inherit" />
-                  </ConnectWallet>
-                  <WalletDropdown>
-                    <Identity className="px-4 pt-3 pb-2" hasCopyAddressOnClick>
-                      <Avatar />
-                      <Name />
-                      <Address />
-                      <EthBalance />
-                    </Identity>
-                    <WalletDropdownDisconnect />
-                  </WalletDropdown>
-                </Wallet>
-              </div>
+              <WalletSection />
             </div>
           </div>
         </header>
