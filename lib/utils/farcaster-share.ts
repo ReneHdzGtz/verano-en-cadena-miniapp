@@ -58,7 +58,7 @@ export function generateFrameMetadata() {
     'fc:frame:button:2': '🧪 Test Personalidad',
     'fc:frame:button:3': '🔮 Ver App Completa',
     'fc:frame:button:3:action': 'link',
-    'fc:frame:button:3:target': `${baseUrl}/punk-horoscope`,
+    'fc:frame:button:3:target': baseUrl,
     'fc:frame:post_url': `${baseUrl}/api/frames/punk-horoscope?action=home`,
     'fc:frame:input:text': 'Tu wallet address...',
     'og:title': 'Punk Horoscope - Horóscopos Web3',
